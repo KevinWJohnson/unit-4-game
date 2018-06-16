@@ -1,0 +1,56 @@
+body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: orangered;
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#Game-Description {
+    background-color: rgb(247, 202, 165);
+    color: green;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#number-match-container {
+    background-color: green;
+    text-align: center;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#wins-and-losses {
+    background-color: lightskyblue;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
