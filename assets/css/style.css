@@ -1,8 +1,16 @@
+
+
 body {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
+
+/* Visual */
+background: url("../images/Background.PNG");
+
+
+
 }
 
 * {
@@ -53,4 +61,10 @@ header {
     padding-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.crystal-image {
+    width: 150px;
+    height: 150px;
+    background: white;
 }
