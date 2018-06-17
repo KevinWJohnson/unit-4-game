@@ -16,6 +16,13 @@ $(document).ready(function () {
         return Math.floor(Math.random() * 12) + 1; // returns a number between 1 and 12
     }
 
+    $(".crystal-image"), on("click", function () {
+
+
+        
+    });
+
+
     $("#number-to-match").text(targetNumber);
 
     $("#winTot").text(winTotal);
