@@ -34,9 +34,9 @@ $(document).ready(function () {
         return randCrytalsArray
     }
 
-    for (var i = 0; i < numberOptions.length; i++) {
-        console.log(numberOptions[i])
-    }
+    //    for (var i = 0; i < numberOptions.length; i++) {
+    //        console.log(numberOptions[i])
+    //    }
 
     // < img class="img-responsive crystal-image" value="crystal1" src="https://www.ahbeads.com/productimages/300/14152071.png" id="Crystal1" >
     //     <img class="img-responsive crystal-image" value="crystal2" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/8/8d/Daily_Crystal.png/revision/latest?cb=20150825213624"
@@ -48,36 +48,33 @@ $(document).ready(function () {
 
     // Creating crystals for every numberOption
 
-    for (var i = 0; i < numberOptions.length; i++) {
+    // for (var i = 0; i < numberOptions.length; i++) {
 
-        // For each iteration, creating an imageCrystal
-        var imageCrystal = $("<img>");
+    //     // For each iteration, creating an imageCrystal
+    //     var imageCrystal = $("<img>");
 
-        // Each crystal will be given a class ".crystal-image"
-        imageCrystal.addClass("crystal-image");
+    //     // Each crystal will be given a class ".crystal-image"
+    //     imageCrystal.addClass("crystal-image");
 
-        // Each crystal will be given a class ".img-responsive"
-        imageCrystal.addClass("img-responsive");
+    //     // Each crystal will be given a class ".img-responsive"
+    //     imageCrystal.addClass("img-responsive");
 
-        // Each crystal will be given a scr link to the crystal image
-        imageCrystal.attr("src", pictureLoc[i]);
+    //     // Each crystal will be given a scr link to the crystal image
 
-        //console.log(imageCrystal.attr("src", pictureLoc[i]))
+    //     imageCrystal.attr("src", pictureLoc[i]);
 
-
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
-
-        imageCrystal.attr("data-crystalValue", numberOptions[i]);
-
-        // Each crystal image (with all its classes and attributes) will get added to
-
-        $("#crystals").append(imageCrystal);
-
-    }
+    //     console.log(imageCrystal.attr("src", pictureLoc[i]))
 
 
-    //$(".crystal-image"), on("click", function () {
+    //     // Each imageCrystal will be given a data attribute called data-crystalValue.
+    //     // This data attribute will be set equal to the array value.
+
+    //     imageCrystal.attr("data-crystalValue", numberOptions[i]);
+
+    // }
+
+
+    // $(".crystal-image"), on("click", function () {
 
 
 

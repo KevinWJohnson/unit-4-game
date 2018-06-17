@@ -1,92 +1,163 @@
 
 
 body {
+
     margin-top: 20px;
+
     margin-bottom: 20px;
+
     margin-right: 10px;
+
     margin-left: 10px;
 
+
+
 /* Visual */
+
 background: url("../images/Background.PNG");
 
 
 
+
+
+
+
 }
+
+
 
 * {
+
     box-sizing: border-box;
+
 }
+
+
 
 header {
+
     background-color: orangered;
+
     text-align: center;
+
     color: white;
+
     padding-top: 40px;
+
     padding-bottom: 40px;
+
     padding-right: 20px;
+
     padding-left: 20px;
+
     margin-top: 20px;
+
     margin-bottom: 20px;
+
 }
+
+
 
 #Game-Description {
+
     background-color: rgb(247, 202, 165);
+
     color: green;
+
     padding-top: 40px;
+
     padding-bottom: 40px;
+
     padding-right: 20px;
+
     padding-left: 20px;
+
     margin-top: 10px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 #number-match-container {
+
     background-color: green;
+
     text-align: center;
+
     color: black;
+
     padding-top: 20px;
+
     padding-bottom: 28px;
+
     padding-right: 20px;
+
     padding-left: 20px;
+
     margin-top: 10px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 #wins-and-losses {
+
     background-color: lightskyblue;
+
     color: black;
+
     padding-top: 20px;
+
     padding-bottom: 20px;
+
     padding-right: 20px;
+
     padding-left: 20px;
+
     margin-top: 10px;
+
     margin-bottom: 10px;
+
 }
+
+
 
 .crystal-image {
+
     width: 150px;
+
     height: 150px;
+
     background: white;
+
     margin-top: 10px;
+
     margin-bottom: 10px;
+
 }
 
-#crystals {
-    width: 150px;
-    height: 150px;
-    background: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 
 #total-score-header, #total-score {
+
     background-color: teal;
+
     text-align: center;
+
     color: white;
+
     padding-top: 20px;
+
     padding-bottom: 20px;
+
     padding-right: 20px;
+
     padding-left: 20px;
+
     margin-top: 10px;
+
     margin-bottom: 10px;
-}

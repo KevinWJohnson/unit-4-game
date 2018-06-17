@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>CrystalsCollectorGame</title>
+    <meta charset="UTF-8">
+    <title>CrystalsCollectorGame</title>
 
-  <!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 
@@ -24,117 +24,114 @@
 <body>
 
 
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-4">
-      <header>
-        <h1>CrystralsCollector!</h1>
-      </header>
-    </div>
-    <!-- Second Column-->
-    <div class="col-md-8">
-    </div>
-  </div>
-
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-7">
-      <div id="Game-Description">
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.
-        </p>
-        <p>You win the game by matching your total score to the random number, you lose the game if your total score goes above
-          the random number.</p>
-        <p>The value of each crystal is hidden from you until you click on it.</p>
-        <p>Each time when the game starts, the game will change the values of each crystal.</p>
-      </div>
+    <div class="row">
+        <!-- First Column-->
+        <div class="col-md-4">
+            <header>
+                <h1>CrystralsCollector!</h1>
+            </header>
+        </div>
+        <!-- Second Column-->
+        <div class="col-md-8">
+        </div>
     </div>
 
-    <!-- Second Column-->
-    <div class="col-md-5">
+    <div class="row">
+        <!-- First Column-->
+        <div class="col-md-7">
+            <div id="Game-Description">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your
+                    total score.
+                </p>
+                <p>You win the game by matching your total score to the random number, you lose the game if your total score
+                    goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+
+        <!-- Second Column-->
+        <div class="col-md-5">
+        </div>
     </div>
-  </div>
 
 
 
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-4">
-      <div id="number-match-container">
-        <h1>Number to Match</h1>
-        <h1>
-          <span id="number-to-match"></span>
-        </h1>
-      </div>
+    <div class="row">
+        <!-- First Column-->
+        <div class="col-md-4">
+            <div id="number-match-container">
+                <h1>Number to Match</h1>
+                <h1>
+                    <span id="number-to-match"></span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- Second Column-->
+        <div class="col-md-3">
+            <div id="wins-and-losses">
+                <h1>
+                    <span id="winLoseMessage"></span>
+                </h1>
+                <h1>Wins:
+                    <span id="winTot"></span>
+                </h1>
+                <h1>Losses:
+                    <span id="lossTot"></span>
+                </h1>
+
+            </div>
+        </div>
     </div>
 
-    <!-- Second Column-->
-    <div class="col-md-3">
-      <div id="wins-and-losses">
-        <h1>
-          <span id="winLoseMessage"></span>
-        </h1>
-        <h1>Wins:
-          <span id="winTot"></span>
-        </h1>
-        <h1>Losses:
-          <span id="lossTot"></span>
-        </h1>
+    <div class="row">
 
-      </div>
+        <!-- First Column-->
+        <div class="col-md-12">
+            <span div id="crystals"></span>
+        </div>
+        <!-- Second Column-->
+        <div class="col-md-5">
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-7">
-      <div id="image-container">
-        <img class="img-responsive crystal-image" value="crystal1" src="https://www.ahbeads.com/productimages/300/14152071.png" id="Crystal1">
-        <img class="img-responsive crystal-image" value="crystal2"src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/8/8d/Daily_Crystal.png/revision/latest?cb=20150825213624"
-          id="Crystal2">
-        <img class="img-responsive crystal-image" value="crystal3"src="https://vignette.wikia.nocookie.net/the-secret-society/images/e/eb/The_Legend_Returns_Jade_Crystal_special_items.PNG/revision/latest?cb=20170205145851"
-          id="Crystal3">
-        <img class="img-responsive crystal-image" value="crystal4"src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/8/84/Crystal_multi_science.png/revision/latest?cb=20151121235753"
-          id="Crystal4">
 
-      </div>
+
+    <div class="row">
+        <!-- First Column-->
+        <div class="col-md-4">
+            <div id="total-score-header">
+                <h1>Your total score is:</h1>
+            </div>
+        </div>
+        <!-- Second Column-->
+        <div class="col-md-5">
+        </div>
     </div>
-    <!-- Second Column-->
-    <div class="col-md-5">
+
+
+    <div class="row">
+        <!-- First Column-->
+        <div class="col-md-4">
+            <div id="total-score">
+                <h1>
+                    <span id="scoreTot"></span>
+                </h1>
+            </div>
+        </div>
+        <!-- Second Column-->
+        <div class="col-md-5">
+        </div>
     </div>
-  </div>
-
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-4">
-      <div id="total-score-header">
-        <h1>Your total score is:</h1>
-      </div>
-    </div>
-    <!-- Second Column-->
-    <div class="col-md-5">
-    </div>
-  </div>
-
-
-  <div class="row">
-    <!-- First Column-->
-    <div class="col-md-4">
-      <div id="total-score">
-        <h1><span id="scoreTot"></span></h1>
-      </div>
-    </div>
-    <!-- Second Column-->
-    <div class="col-md-5">
-    </div>
-  </div>
 
 
 
 
 
 
-  <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game.js"></script>
 
 
 </body>
