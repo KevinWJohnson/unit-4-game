@@ -17,50 +17,44 @@ $(document).ready(function () {
         "https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/8/84/Crystal_multi_science.png/revision/latest?cb=20151121235753"
     ];
 
+    var crystalArray = [
+        "data-crystalValue1",
+        "data-crystalValue2",
+        "data-crystalValue3",
+        "data-crystalValue4",
+    ];
 
-    function rmImages() {
-        var remove = document.getElementsByClassName("crystal-image");
-
-        // As long as Class has a child node, remove it
-        while (remove.hasChildNodes()) {
-            remove.removeChild(remove.firstChild);
-        }
-    }
 
     // Creating crystals for every numberOption
 
-    function newCrystals() {
+    for (var i = 0; i < numberOptions.length; i++) {
+
+        // For each iteration, creating an imageCrystal
+        var imageCrystal = $("<img>");
+
+        // Each crystal will be given a class ".crystal-image"
+        imageCrystal.addClass("crystal-image");
+
+        // Each crystal will be given a class ".img-responsive"
+        imageCrystal.addClass("img-responsive");
+
+        // Each crystal will be given a scr link to the crystal image
+        imageCrystal.attr("src", pictureLoc[i]);
+
+        //console.log(imageCrystal.attr("src", pictureLoc[i]))
 
 
-        for (var i = 0; i < numberOptions.length; i++) {
+        // Each imageCrystal will be given a data attribute called data-crystalValue.
+        // This data attribute will be set equal to the array value.
 
-            // For each iteration, creating an imageCrystal
-            imageCrystal = $("<img>");
+        imageCrystal.attr(crystalArray[i], numberOptions[i]);
 
-            // Each crystal will be given a class ".crystal-image"
-            imageCrystal.addClass("crystal-image");
+        // Each crystal image (with all its classes and attributes) will get added to
 
-            // Each crystal will be given a class ".img-responsive"
-            imageCrystal.addClass("img-responsive");
+        $("#crystals").append(imageCrystal);
 
-            // Each crystal will be given a scr link to the crystal image
-            imageCrystal.attr("src", pictureLoc[i]);
-
-            //console.log(imageCrystal.attr("src", pictureLoc[i]))
-
-
-            // Each imageCrystal will be given a data attribute called data-crystalValue.
-            // This data attribute will be set equal to the array value.
-
-            imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-            // Each crystal image (with all its classes and attributes) will get added to
-
-            $("#crystals").append(imageCrystal);
-
-            // Displaying the results
-            displayResults();
-        }
+        // Displaying the results
+        displayResults();
 
     }
 
@@ -93,18 +87,18 @@ $(document).ready(function () {
 
 
         // Updating the imageCrystal attribute with new numberOptions
-        //for (var i = 0; i < numberOptions.length; i++) {
-        //    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-        //}
-        newCrystals();
+        for (var i = 0; i < numberOptions.length; i++) {
+            imageCrystal.attr(crystalArray[i], numberOptions[i]);
+        }
 
+        
         // Click event applies to every single crystal on the page.
 
         $(".crystal-image").on("click", function () {
 
             // Extracting the data-crystalValue from .crystal-image
 
-            var crystalValue = parseInt($(this).attr("data-crystalvalue"));
+            var crystalValue = parseInt($(this).attr("data-crystalValue"));
 
             // The adding the crystalValue value to the global counter
             // Each time a crystal is selected it's value is added to the counter
@@ -118,18 +112,14 @@ $(document).ready(function () {
             if (totalScore === targetNumber) {
                 winTotal++;
                 totalScore = 0;
-                $("#winLoseMessage").text("You Win!");
-                // clearing the old crystals
-                rmImages();
+                $("#winLoseMessage").text("You Win!")
                 reruncrystalClick();
             }
             // You lose
             else if (totalScore >= targetNumber) {
                 lossTotal++;
                 totalScore = 0;
-                $("#winLoseMessage").text("You Lose!");
-                // clearing the old crystals
-                rmImages();
+                $("#winLoseMessage").text("You Lose!")
                 reruncrystalClick();
             }
 
