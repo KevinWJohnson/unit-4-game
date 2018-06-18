@@ -5,6 +5,7 @@ $(document).ready(function () {
     var winTotal = 0;
     var lossTotal = 0;
     var totalScore = 0;
+    var targetNumber = 0;
 
     var pictureLoc = [
         "https://www.ahbeads.com/productimages/300/14152071.png",
@@ -13,11 +14,11 @@ $(document).ready(function () {
         "https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/8/84/Crystal_multi_science.png/revision/latest?cb=20151121235753"
     ];
 
-    function resetTotalScore() {
+    function reruncrystalClick() {
 
 
         // Getting random target number
-        var targetNumber = randomTarget();
+        targetNumber = randomTarget();
 
 
         function randomTarget() {
@@ -70,11 +71,14 @@ $(document).ready(function () {
 
             $("#crystals").append(imageCrystal);
 
+            // Displaying the results
+            displayResults();
+
         }
 
         // Click event applies to every single crystal on the page.
 
-        $(".crystal-image"), on("click", function () {
+        $(".crystal-image").on("click", function () {
 
             // Extracting the data-crystalValue from .crystal-image
 
@@ -92,15 +96,15 @@ $(document).ready(function () {
             if (totalScore === targetNumber) {
                 winTotal++;
                 totalScore = 0;
-                displayResults();
-                resetTotalScore();
+                $("#winLoseMessage").text("You Win!")
+                reruncrystalClick();
             }
             // You lose
             else if (totalScore >= targetNumber) {
                 lossTotal++;
                 totalScore = 0;
-                displayResults();
-                resetTotalScore();
+                $("#winLoseMessage").text("You Lose!")
+                reruncrystalClick();
             }
 
         });
@@ -121,7 +125,7 @@ $(document).ready(function () {
     }
 
     // For the first time the program appears
-    resetTotalScore();
+    reruncrystalClick();
     displayResults();
 
 });
