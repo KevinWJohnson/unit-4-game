@@ -51,10 +51,10 @@ $(document).ready(function () {
         crystal.crystal_3.points = Math.floor(Math.random() * 12) + 1; // returns a number between 1 and 12
         crystal.crystal_4.points = Math.floor(Math.random() * 12) + 1; // returns a number between 1 and 12
 
-        console.log("crystal_1 points: " + crystal.crystal_1.points)
-        console.log("crystal_2 points: " + crystal.crystal_2.points)
-        console.log("crystal_3 points: " + crystal.crystal_3.points)
-        console.log("crystal_4 points: " + crystal.crystal_4.points)
+        //console.log("crystal_1 points: " + crystal.crystal_1.points)
+        //console.log("crystal_2 points: " + crystal.crystal_2.points)
+        //console.log("crystal_3 points: " + crystal.crystal_3.points)
+        //console.log("crystal_4 points: " + crystal.crystal_4.points)
 
 
         displayResults();
@@ -128,7 +128,7 @@ $(document).ready(function () {
 
         //Counter to see how many times the update is being called
         counter++;
-        console.log("counter in winLose " + counter)
+        //console.log("counter in winLose " + counter)
 
         $(".crystal-image").on("click", function () {
 
@@ -136,7 +136,7 @@ $(document).ready(function () {
             $("#winLoseMessage").text("");
 
             // Extracting the data-crystalValue from .crystal-image
-            console.log("winLose before crystalValue totalScore = " + totalScore)
+            //console.log("winLose before crystalValue totalScore = " + totalScore)
 
             var crystalValue = parseInt($(this).attr("data-crystalvalue"));
             // var crystalValue = parseInt($(this).attr("data-crystalvalue"));
@@ -149,8 +149,8 @@ $(document).ready(function () {
 
             // Win-Lose logic of the game
 
-            console.log("WinLose totalScore = " + totalScore)
-            console.log("WinLose targetNumber = " + targetNumber)
+            //console.log("WinLose totalScore = " + totalScore)
+            //console.log("WinLose targetNumber = " + targetNumber)
 
             // You win
             if (totalScore === targetNumber) {

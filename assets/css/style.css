@@ -90,3 +90,34 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+body {
+    width: 100%;
+    overflow-wrap: break-word;
+    
+}
+
+
+/**
+ * Media Query
+ **/
+  
+  @media screen and (max-width: 768px) {
+    
+    body {
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+  }    
+  
+  /* Additional Screen Sizes */
+  
+  /* Width at 640px and below */
+  @media screen and (max-width: 640px) {
+  
+    body {
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+  }
+  
