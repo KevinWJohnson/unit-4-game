@@ -53,7 +53,9 @@ $(document).ready(function () {
         console.log("crystal_3 points: " + crystal.crystal_3.points)
         console.log("crystal_4 points: " + crystal.crystal_4.points)
 
+        $("#winLoseMessage").text("");
 
+        displayResults();
     }
 
     // Creating crystals for every numberOption
@@ -74,7 +76,7 @@ $(document).ready(function () {
 
             // Each crystal will be given a scr link to the crystal image
             imageCrystal.attr("src", crystal[key].imgLoc);
-            console.log("imgLoc " + crystal[key].imgLoc);
+            //console.log("imgLoc " + crystal[key].imgLoc);
 
             //console.log(imageCrystal.attr("src", pictureLoc[i]))
 
@@ -83,13 +85,13 @@ $(document).ready(function () {
             // This data attribute will be set equal to the array value.
 
             imageCrystal.attr("data-crystalvalue", crystal[key].points);
-            console.log("key.points " + crystal[key].points);
+            //console.log("key.points " + crystal[key].points);
 
             // Each crystal image (with all its classes and attributes) will get added to
-            
+
             // Commands to empty the area before the recreation (append)
-            $("#crystals").html();
-            $("#crystals").empty();
+            //$("#crystals").html();
+            // $("#crystals").empty();
             $("#crystals").append(imageCrystal);
 
             // Displaying the results
@@ -106,28 +108,43 @@ $(document).ready(function () {
             // Extracting the data-crystalValue from .crystal-image
 
             var crystalValue = parseInt($(this).attr("data-crystalvalue"));
+            // var crystalValue = parseInt($(this).attr("data-crystalvalue"));
 
             // The adding the crystalValue value to the global counter
             // Each time a crystal is selected it's value is added to the counter
             totalScore += crystalValue;
             $("#scoreTot").text(totalScore);
-            console.log(crystalValue);
+            console.log("crystalValue: " + crystalValue);
+
+            // Calling the winLose function to check if the game is over
+            winLose();
         });
+
+        console.log("updateScore totalScore = " + totalScore)
+
     }
 
+    //Here is an example of code to assign the crystal value to your new total:
+    //function updateMatchingNumber(crystal) {
+    // Update our "current guess" number based on which crystal was clicked.
+    // yourMatchingNumber += crystals[crystal.attr("data-name")].points;
+    // }
 
 
-    function winLose(totalScore) {
+    function winLose() {
 
 
         // Win-Lose logic of the game
+
+        console.log("WinLose totalScore = " + totalScore)
+        console.log("WinLose targetNumber = " + targetNumber)
 
         // You win
         if (totalScore === targetNumber) {
             winTotal++;
             totalScore = 0;
             $("#winLoseMessage").text("You Win!");
-            // clearing the old crystals
+            // resetting the values
             resetValues();
         }
         // You lose
@@ -135,8 +152,11 @@ $(document).ready(function () {
             lossTotal++;
             totalScore = 0;
             $("#winLoseMessage").text("You Lose!");
-            // clearing the old crystals
+            // resetting the values
             resetValues();
+        }
+        else {
+            updateScore();
         }
     }
 
@@ -156,13 +176,14 @@ $(document).ready(function () {
 
     }
     // Game function calls
-
-
-
-    // For the first time the program appears
-    displayResults();
     resetValues();
     renderCrystals();
     updateScore();
-    
+
+    // displayResults();
+    // resetValues();
+    // renderCrystals();
+    // updateScore();
+    // displayResults();
+
 });
