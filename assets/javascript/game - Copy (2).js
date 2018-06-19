@@ -7,7 +7,6 @@ $(document).ready(function () {
     var totalScore = 0;
     var targetNumber = 0;
     var counter = 0;
-    var firstTime = true;
 
 
     var crystal = {
@@ -56,23 +55,15 @@ $(document).ready(function () {
         console.log("crystal_3 points: " + crystal.crystal_3.points)
         console.log("crystal_4 points: " + crystal.crystal_4.points)
 
+        $("#winLoseMessage").text("");
 
         displayResults();
-        renderCrystals();
     }
 
     // Creating crystals for every numberOption
 
     function renderCrystals() {
 
-        // After first time through want to delete the existing crystals so we do not get
-        // multiple crystals
-
-        if (firstTime != true) {
-            for (var key in crystal) {
-                $("#crystals").empty();
-            }
-        }
 
         for (var key in crystal) {
 
@@ -101,42 +92,27 @@ $(document).ready(function () {
             // Each crystal image (with all its classes and attributes) will get added to
 
             // Commands to empty the area before the recreation (append)
+            //$("#crystals").html();
+            // $("#crystals").empty();
             $("#crystals").append(imageCrystal);
 
-        }
-        // After first time through set firstTime to false
-        firstTime = false;
 
+        }
         // Displaying the results
         displayResults();
-
-        // Calling the winLose function
-        winLose();
     }
 
-
-    //Here is an example of code to assign the crystal value to your new total:
-    //function updateMatchingNumber(crystal) {
-    // Update our "current guess" number based on which crystal was clicked.
-    // yourMatchingNumber += crystals[crystal.attr("data-name")].points;
-    // }
-
-
-    function winLose() {
-
+    function updateScore() {
         // Click event applies to every single crystal on the page.
 
         //Counter to see how many times the update is being called
         counter++;
-        console.log("counter in winLose " + counter)
+        console.log("counter in UpdateScore " + counter)
 
         $(".crystal-image").on("click", function () {
 
-            // Clearing the winLoseMessage
-            $("#winLoseMessage").text("");
-
             // Extracting the data-crystalValue from .crystal-image
-            console.log("winLose before crystalValue totalScore = " + totalScore)
+            console.log("updateScore before crystalValue totalScore = " + totalScore)
 
             var crystalValue = parseInt($(this).attr("data-crystalvalue"));
             // var crystalValue = parseInt($(this).attr("data-crystalvalue"));
@@ -147,30 +123,50 @@ $(document).ready(function () {
             $("#scoreTot").text(totalScore);
             console.log("crystalValue: " + crystalValue);
 
-            // Win-Lose logic of the game
-
-            console.log("WinLose totalScore = " + totalScore)
-            console.log("WinLose targetNumber = " + targetNumber)
-
-            // You win
-            if (totalScore === targetNumber) {
-                winTotal++;
-                totalScore = 0;
-                $("#winLoseMessage").text("You Win!");
-                // resetting the values
-                resetValues();
-            }
-            // You lose
-            else if (totalScore >= targetNumber) {
-                lossTotal++;
-                totalScore = 0;
-                $("#winLoseMessage").text("You Lose!");
-                // resetting the values
-                resetValues();
-            }
-
+            // Calling the winLose function to check if the game is over
+            winLose();
         });
+
+        console.log("updateScore totalScore = " + totalScore)
+
     }
+
+    //Here is an example of code to assign the crystal value to your new total:
+    //function updateMatchingNumber(crystal) {
+    // Update our "current guess" number based on which crystal was clicked.
+    // yourMatchingNumber += crystals[crystal.attr("data-name")].points;
+    // }
+
+
+    function winLose() {
+
+
+        // Win-Lose logic of the game
+
+        console.log("WinLose totalScore = " + totalScore)
+        console.log("WinLose targetNumber = " + targetNumber)
+
+        // You win
+        if (totalScore === targetNumber) {
+            winTotal++;
+            totalScore = 0;
+            $("#winLoseMessage").text("You Win!");
+            // resetting the values
+            resetValues();
+        }
+        // You lose
+        else if (totalScore >= targetNumber) {
+            lossTotal++;
+            totalScore = 0;
+            $("#winLoseMessage").text("You Lose!");
+            // resetting the values
+            resetValues();
+        }
+        else {
+            updateScore();
+        }
+    }
+
 
 
 
@@ -186,11 +182,10 @@ $(document).ready(function () {
         $("#scoreTot").text(totalScore);
 
     }
-
-
     // Game function calls
     resetValues();
     renderCrystals();
+    updateScore();
 
     // displayResults();
     // resetValues();
