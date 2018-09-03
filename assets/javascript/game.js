@@ -132,8 +132,8 @@ $(document).ready(function () {
 
         $(".crystal-image").on("click", function () {
 
-            // Clearing the winLoseMessage
-            $("#winLoseMessage").text("");
+            // Setting the winLoseMessage to Results
+            $("#winLoseMessage").text("Results");
 
             // Extracting the data-crystalValue from .crystal-image
             //console.log("winLose before crystalValue totalScore = " + totalScore)
